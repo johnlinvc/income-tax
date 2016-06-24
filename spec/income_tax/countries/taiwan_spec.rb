@@ -14,28 +14,28 @@ describe IncomeTax::Countries::Taiwan do
   describe "from gross income of 1000" do
     let(:tax_year)     { 2015                                      }
     let(:income)       { 1000                                      }
-    its(:rate)         { should be == Rational(1, 20)              }
+    its(:rate)         { should be == Rational(0, 1 )              }
     its(:gross_income) { should be == 1000                         }
-    its(:net_income)   { should be == 950                          }
-    its(:taxes)        { should be == 50                           }
+    its(:net_income)   { should be == 1000                         }
+    its(:taxes)        { should be == 0                            }
   end
 
   describe "from gross income of 10000" do
     let(:tax_year)     { 2015                                      }
     let(:income)       { 10000                                     }
-    its(:rate)         { should be == Rational(1, 20)              }
+    its(:rate)         { should be == Rational(0, 1)               }
     its(:gross_income) { should be == 10000                        }
-    its(:net_income)   { should be == 9500                         }
-    its(:taxes)        { should be == 500                          }
+    its(:net_income)   { should be == 10000                        }
+    its(:taxes)        { should be == 0                            }
   end
 
   describe "from gross income of 100000" do
     let(:tax_year)     { 2015                                      }
     let(:income)       { 100000                                    }
-    its(:rate)         { should be == Rational(1, 20)              }
+    its(:rate)         { should be == Rational(0, 1)               }
     its(:gross_income) { should be == 100000                       }
-    its(:net_income)   { should be == 95000                        }
-    its(:taxes)        { should be == 5000                         }
+    its(:net_income)   { should be == 100000                       }
+    its(:taxes)        { should be == 0                            }
   end
 
   describe "from gross income of 100000000" do
@@ -43,8 +43,8 @@ describe IncomeTax::Countries::Taiwan do
     let(:income)       { 100000000                                 }
     its(:rate)         { should be == Rational(71, 181)            }
     its(:gross_income) { should be == 100000000                    }
-    its(:net_income)   { should be == 60774400                     }
-    its(:taxes)        { should be == 39225600                     }
+    its(:net_income)   { should be == 56403100                     }
+    its(:taxes)        { should be == 43596900                     }
   end
 
   describe "from net income of 0" do
